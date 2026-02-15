@@ -45,7 +45,7 @@ make uninstall
 make undeploy
 ```
 
-**Delete the APIs(CRDs) from the cluster:**
+**Create bootstrap configMap:**
 ```sh
 kubectl create cm ingress-tls-watcher-config --from-literal http-timeout=30s --from-literal tls-insecure=false --from-literal tls-trustanchors="" --from-literal periodic-scan-interval=60m --from-literal periodic-scan-workers=5 --dry-run -o yaml --namespace ingress-tls-operator-system | kubectl apply -f -
 ```
